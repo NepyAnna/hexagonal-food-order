@@ -1,13 +1,12 @@
-package com.sheoanna.hexagonall_foodorder;
+package com.sheoanna.hexagonal_food_order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HexagonallFoodorderApplication {
+public class HexagonalFoodOrderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HexagonallFoodorderApplication.class, args);
+		SpringApplication.run(HexagonalFoodOrderApplication.class, args);
 	}
-
 }
