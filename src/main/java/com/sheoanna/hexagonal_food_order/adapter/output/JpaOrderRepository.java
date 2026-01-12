@@ -19,7 +19,8 @@ public class JpaOrderRepository implements OrderRepositoryPort {
 
     @Override
     public String findById(String orderId) {
-        return "";
+        OrderEntity entity = repository.findById(orderId).orElseThrow();
+        return mapToDomain(entity).getStatus();
     }
 
     private OrderEntity mapToEntity(FoodOrder order) {
