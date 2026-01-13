@@ -20,11 +20,13 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<String> placeOrder(@RequestBody FoodOrder order) {
         placeOrderUsecase.placeOrder(order);
+        System.out.println("--INPUT ADAPTER EXECUTED--");
         return ResponseEntity.ok("Order placed");
     }
 
     @GetMapping("/track/{orderId}")
     public ResponseEntity<String> trackOrder(@PathVariable String orderId){
+        System.out.println("--INPUT ADAPTER EXECUTED--");
         return ResponseEntity.ok("Status: " + trackOrderUsecase.trackOrder(orderId));
     }
 }

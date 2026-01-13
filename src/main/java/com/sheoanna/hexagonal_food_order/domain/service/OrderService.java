@@ -15,11 +15,13 @@ public class OrderService implements PlaceOrderUsecase, TrackOrderUsecase {
     @Override
     public void placeOrder(FoodOrder order) {
         order.setStatus("Order placed");
+        System.out.println("--CORE EXECUTED WITH INPUT PORT--");
         orderRepositoryPort.saveOrder(order);
     }
 
     @Override
     public String trackOrder(String orderId) {
+        System.out.println("--CORE EXECUTED WITH INPUT PORT--");
         return orderRepositoryPort.findById(orderId);
     }
 }

@@ -14,12 +14,14 @@ public class JpaOrderRepository implements OrderRepositoryPort {
 
     @Override
     public void saveOrder(FoodOrder order) {
+        System.out.println("--OUTPUT ADAPTER EXECUTED WITH OUTPUT PORT--");
         repository.save(mapToEntity(order));
     }
 
     @Override
     public String findById(String orderId) {
         OrderEntity entity = repository.findById(orderId).orElseThrow();
+        System.out.println("--OUTPUT ADAPTER EXECUTED WITH OUTPUT PORT--");
         return mapToDomain(entity).getStatus();
     }
 
